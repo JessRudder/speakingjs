@@ -16,3 +16,26 @@ if (x === 0) {  // Is `x` equal to zero?
 function baz(a, b) {
     return a + b;
 }
+
+// statements do things while expressions produce values
+//if-then-else—either as a statement:
+var x;
+if (y >= 0) {
+    x = y;
+} else {
+    x = -y;
+}
+//or as an expression:
+var x = y >= 0 ? y : -y;
+
+//two operators for categorizing values: typeof is mainly used for primitive values, while instanceof is used for objects
+typeof true
+//'boolean'
+typeof 'abc'
+//'string'
+
+{} instanceof Object
+//true
+[] instanceof Array
+//true
+
