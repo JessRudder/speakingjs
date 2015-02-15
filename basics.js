@@ -81,3 +81,64 @@ function pair(x, y) {
     ...
 }
 
+//example of try/except for handling errors
+//try clause surrounds critical code, and the catch clause is executed if an exception is thrown inside the try clause
+function getPerson(id) {
+    if (id < 0) {
+        throw new Error('ID must not be negative: '+id);
+    }
+    return { id: id }; // normally: retrieved from database
+}
+
+function getPersons(ids) {
+    var result = [];
+    ids.forEach(function (id) {
+        try {
+            var person = getPerson(id);
+            result.push(person);
+        } catch (exception) {
+            console.log(exception);
+        }
+    });
+    return result;
+}
+
+//variable declarations are hoisted but var assignments are not
+function foo() {
+    console.log(tmp); // undefined
+    if (false) {
+        var tmp = 3;  // (1)
+    }
+}
+
+//Internally, the preceding function is executed like this:
+
+function foo() {
+    var tmp;  // hoisted declaration
+    console.log(tmp);
+    if (false) {
+        tmp = 3;  // assignment stays put
+    }
+
+//A closure is a function plus the connection to the variables of its surrounding scopes.
+
+//immediately invoked function expression for keeping variables from becoming global on accident
+(function () {  // open IIFE
+    var tmp = ...;  // not a global variable
+}());  // close IIFE
+}
+
+//example where variable is scoped beyond where you'd like
+//result is always 5
+var result = [];
+for (var i=0; i < 5; i++) {
+    result.push(function () { return i });  // (1)
+}
+
+// result is current state of i when you ask for it thanks to IIFE
+for (var i=0; i < 5; i++) {
+    (function () {
+        var i2 = i; // copy current i
+        result.push(function () { return i2 });
+    }());
+}
