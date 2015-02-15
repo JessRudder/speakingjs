@@ -39,3 +39,45 @@ typeof 'abc'
 [] instanceof Array
 //true
 
+//case statements in javascript compared via === with the parameter
+switch (fruit) {
+    case 'banana':
+        // ...
+        break;
+    case 'apple':
+        // ...
+        break;
+    default:  // all other cases
+        // ...
+}
+
+//TWO WAYS TO DEF FUNCTIONS
+
+//function declaration
+function add(param1, param2) {
+    return param1 + param2;
+}
+
+//assign function expression to variable
+var add = function (param1, param2) {
+    return param1 + param2;
+};
+
+//if too many params are given, the extra are ignored by all but "arguments" (returns array with all args given)
+//if too few params are given, the missing ones receive value of undefined
+
+//common way to make default param values
+function pair(x, y) {
+    x = x || 0;  // (1)
+    y = y || 0;
+    return [ x, y ];
+}
+
+//enforcing specific number of params with arguments.length
+function pair(x, y) {
+    if (arguments.length !== 2) {
+        throw new Error('Need exactly 2 arguments');
+    }
+    ...
+}
+
