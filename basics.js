@@ -142,3 +142,57 @@ for (var i=0; i < 5; i++) {
         result.push(function () { return i2 });
     }());
 }
+
+// create object using object literal
+var jane = {
+    name: 'Jane',
+
+    describe: function () {
+        return 'Person named '+this.name;
+    }
+};
+
+//check if a property exists in an object
+'propertyName' in object;
+object.propertyName !== undefined;
+
+//delete a property with 'delete'
+delete object.propertyName
+
+//use bind() to extract a method from an object and stil be able to reference that object
+//it means the function's 'this' will still be bound to the object
+
+var func2 = jane.describe.bind(jane);
+func2()
+//returns 'Person named Jane'
+
+//every function has it's own 'this'.  Two ways to access old this from inside nested function
+//assume
+var jane = {
+    name: 'Jane',
+    friends: [ 'Tarzan', 'Cheeta' ],
+    logHiToFriends: function () {
+        'use strict';
+        this.friends.forEach(function (friend) {
+            // `this` is undefined here
+            console.log(this.name+' says hi to '+friend);
+        });
+    }
+}
+
+//one option is to store it in a different variable
+logHiToFriends: function () {
+    'use strict';
+    var that = this;
+    this.friends.forEach(function (friend) {
+        console.log(that.name+' says hi to '+friend);
+    });
+}
+
+//in this case, forEach has an optional 2nd param that allows you to provide value for 'this'
+logHiToFriends: function () {
+    'use strict';
+    this.friends.forEach(function (friend) {
+        console.log(this.name+' says hi to '+friend);
+    }, this);
+}
