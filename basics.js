@@ -196,3 +196,23 @@ logHiToFriends: function () {
         console.log(this.name+' says hi to '+friend);
     }, this);
 }
+
+//simple pattern for starting with inheritance
+// Set up instance data
+function Point(x, y) {
+    this.x = x;
+    this.y = y;
+}
+// Methods
+Point.prototype.dist = function () {
+    return Math.sqrt(this.x*this.x + this.y*this.y);
+};
+
+//function Point sets up the instance data (data is specific to each instance)
+//property Point.prototype contains an object with the methods (data is shared among all instances)
+
+var p = new Point(3, 5);
+p.x
+//3
+p.dist()
+//5.830951894845301
