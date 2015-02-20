@@ -251,3 +251,13 @@ arr.join('')
 //'xbc'
 arr.join()
 //'x,b,c'
+
+//iterating over an array using forEach
+[ 'a', 'b', 'c' ].forEach(
+    function (elem, index) {  // (1)
+        console.log(index + '. ' + elem);
+    });
+
+//map creates new array by applying a function to each element of an existing array:
+[1,2,3].map(function (x) { return x*x })
+//[1,4,9]
