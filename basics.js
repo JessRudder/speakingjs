@@ -261,3 +261,34 @@ arr.join()
 //map creates new array by applying a function to each element of an existing array:
 [1,2,3].map(function (x) { return x*x })
 //[1,4,9]
+
+//regular expression methods
+/^a+b+$/.test('aaab') //test checks if there's a match
+//true
+/^a+b+$/.test('aaa')
+//false
+
+/a(b+)a/.exec('_abbba_aba_') //exec searches for a match and captures it
+//[ 'abbba', 'bbb' ]
+
+'<a> <bbb>'.replace(/<(.*?)>/g, '[$1]') //searches for a match and replaces it
+//'[a] [bbb]'
+
+//examples of basic math options in javascript
+Math.abs(-2)
+//2
+
+Math.pow(3, 2)  // 3 to the power of 2
+//9
+
+Math.max(2, -1, 5)
+//5
+
+Math.round(1.9)
+//2
+
+Math.PI  // pre-defined constant for π
+//3.141592653589793
+
+Math.cos(Math.PI)  // compute the cosine for 180°
+//-1
