@@ -292,3 +292,20 @@ Math.PI  // pre-defined constant for π
 
 Math.cos(Math.PI)  // compute the cosine for 180°
 //-1
+
+//Dif syntax for same conditional statements
+var salutation;
+if (male) {
+    salutation = 'Mr.';
+} else {
+    salutation = 'Mrs.';
+}
+//or
+var salutation = (male ? 'Mr.' : 'Mrs.');
+
+//with dot notation it's important to distinguish between the floating-point dot and the method invocation dot. Thus, you cannot write 1.toString(); you must use one of the following alternatives:
+1..toString()
+1 .toString()  // space before dot
+(1).toString()
+1.0.toString()
+
