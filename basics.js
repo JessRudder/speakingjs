@@ -309,3 +309,14 @@ var salutation = (male ? 'Mr.' : 'Mrs.');
 (1).toString()
 1.0.toString()
 
+//objects are mutable by default
+var obj = {};
+obj.foo = 123; // add property `foo`
+obj.foo
+//123
+
+//functions return undefined if nothing has been explicitly returned
+
+//If you want to check whether a value is NaN, you have to use the global function isNaN()
+
+
