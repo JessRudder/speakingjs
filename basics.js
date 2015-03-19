@@ -319,4 +319,11 @@ obj.foo
 
 //If you want to check whether a value is NaN, you have to use the global function isNaN()
 
+//Compound Assignment Operators myvar op= value => myvar = myvar op value
+var x = 2;
+x += 3;
+//5
+//*=, /=, %=, +=, -=
+
+
 
