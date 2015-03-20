@@ -325,5 +325,16 @@ x += 3;
 //5
 //*=, /=, %=, +=, -=
 
+//Equality Operators === vs ==
+//Strict equality (===) consider only values that have same type to be equal
+//Normal (lenient) equality (==) try to convert values of different types before comparing them with strict equality
+//!!!Always use strict equality!!!
+undefined === undefined;
+null === null;
+x === x;
+//Exception is NaN
+NaN === NaN;
+//false
+
 
 
