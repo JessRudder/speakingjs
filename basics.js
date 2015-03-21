@@ -336,5 +336,12 @@ x === x;
 NaN === NaN;
 //false
 
+//Use case checking for undefined or null
+//dont use if (x != null)
+if (x) {
 
+}
+//or to be more precise
+if (x!== undefined && x !== null) {
 
+}
