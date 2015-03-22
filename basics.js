@@ -345,3 +345,8 @@ if (x) {
 if (x!== undefined && x !== null) {
 
 }
+
+//Working with numbers in strings
+if (x == 123)...
+//better to convert first
+if (Number(x) === 123)...
