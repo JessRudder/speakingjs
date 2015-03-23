@@ -350,3 +350,12 @@ if (x!== undefined && x !== null) {
 if (x == 123)...
 //better to convert first
 if (Number(x) === 123)...
+
+//Comparing wrapper instances with primitives
+'abc' == new String('abc')
+//true
+//Lenient equality does NOT work between wrapped primitives
+new String('abc') == new String('abc')
+//false
+//Avoid wrappers anyway - Not a good thing to use but if you do, test them like
+if (wrapped.valueOf() == 'abc')...
